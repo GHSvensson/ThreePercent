@@ -1,83 +1,52 @@
-/* General page styling */
 body {
-    font-family: 'Garamond', sans-serif;
-    background-color: #1c1c1c; /* Dark background */
-    color: #f0f0f0; /* Light text color */
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
     text-align: center;
-    line-height: 1.6;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
 }
 
-/* Center the headings */
-h1, h2 {
-    color: #f0f0f0; /* Light headings */
-    margin-bottom: 20px;
-}
-
-/* Styling the input field and button */
 input[type="number"] {
-    width: 100%;
-    max-width: 350px;
     padding: 10px;
-    margin: 10px 0;
-    background-color: #2c2c2c; /* Dark input field */
-    border: 1px solid #444;
-    color: #f0f0f0; /* Light text */
+    margin: 10px;
+    border: none;
     border-radius: 5px;
-    font-size: 16px;
 }
 
 button {
-    background-color: #4CAF50;
-    color: #f0f0f0; /* Light text */
-    padding: 12px 20px;
+    padding: 10px 15px;
+    background-color: #1abc9c;
     border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-}
-
-/* Hover and focus effects for input and button */
-input[type="number"]:focus {
-    outline: none;
-    border-color: #4CAF50; /* Green border on focus */
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    background-color: #16a085;
 }
 
-/* Styling the results section */
-h2 {
-    margin-top: 40px;
-}
-
-p {
-    font-size: 18px;
-    color: #f0f0f0; /* Light text color */
-    background-color: #2c2c2c; /* Darker background for result area */
-    padding: 6px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-/* Adjust styles for mobile responsiveness */
-@media (max-width: 600px) {
-    input[type="number"], button {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    p {
-        font-size: 16px;
-    }
+.results-box {
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 200px; /* Set a maximum height for the scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: pre-wrap; /* Preserve whitespace for formatting */
+    text-align: left; /* Align text to the left */
+    margin: 10px 0;
 }

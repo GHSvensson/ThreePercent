@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Increase Program</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Value Simulation</title>
 </head>
 <body>
-    
-    <h1>Daglig Växt</h1>
+    <div class="container">
+        <h1>Simulering</h1>
+        <label for="initialValue">Ange startvärde:</label>
+        <input type="number" id="initialValue" placeholder="Enter value" required>
+        <button onclick="submitValue()">Ange</button>
 
-<div>
-    <label for="initialValue">Ange en summa som ökar med 3% varje dag:</label>
-    <input type="number" id="initialValue" placeholder="Enter a value">
-    <button onclick="submitValue()">Ange</button>
-</div>
 
-<h2>Resultat</h2>
-<p>Värde: <span id="currentValue">0</span></p>
-<p>Borttagen mängd (30% av ökningen): <span id="subtractedAmount">0</span></p>
-<p>Dagar sedan start: <span id="dayCounter">0</span></p>
+        <h2>Simulate Days</h2>
+        <label for="simulateDays">Number of Days to Simulate:</label>
+        <input type="number" id="simulateDays" placeholder="Enter days" required>
+        <button onclick="simulateDays()">Simulate</button>
 
+        <h2>Simulation Results:</h2>
+        <div id="simulationResults" class="results-box"></div>
+    </div>
 
     <script src="ThreePercent.js"></script>
-</body>
-</html>
-    <link rel="stylesheet" href="style.css">
 </body>
 </html>

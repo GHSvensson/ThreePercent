@@ -2,7 +2,7 @@ function submitValue() {
     const initialValue = parseFloat(document.getElementById('initialValue').value);
     
     if (isNaN(initialValue) || initialValue <= 0) {
-        alert('Ange nummer högre än 0');
+        alert('Please enter a valid number greater than 0');
         return;
     }
 
@@ -60,6 +60,33 @@ function loadValues() {
     }
     
     updateDayCounter(); // Update day counter on load
+}
+
+// New function to simulate days
+function simulateDays() {
+    const daysToSimulate = parseInt(document.getElementById('simulateDays').value);
+    
+    if (isNaN(daysToSimulate) || daysToSimulate <= 0) {
+        alert('Please enter a valid number of days greater than 0');
+        return;
+    }
+
+    const initialValue = parseFloat(localStorage.getItem('initialValue'));
+    const resultsDiv = document.getElementById('simulationResults');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    let currentValue = initialValue; // Start with the initial value
+
+    // Simulate each day
+    for (let day = 1; day <= daysToSimulate; day++) {
+        const increase = currentValue * 0.03; // Calculate increase (3%)
+        const subtractedAmount = increase * 0.30; // Calculate 30% of the increase
+        currentValue += increase; // Update the current value
+
+        // Create a result string for the day
+        const result = `Day ${day}: Current Value = ${currentValue.toFixed(2)}, Subtracted Amount = ${subtractedAmount.toFixed(2)}<br>`;
+        resultsDiv.innerHTML += result; // Append to results
+    }
 }
 
 // Call the loadValues function when the window loads
