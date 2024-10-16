@@ -2,7 +2,7 @@ function submitValue() {
     const initialValue = parseFloat(document.getElementById('initialValue').value);
     
     if (isNaN(initialValue) || initialValue <= 0) {
-        alert('Ange nummer högre än 10');
+        alert('Ange nummer högre än 0');
         return;
     }
 
